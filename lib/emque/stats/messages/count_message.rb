@@ -1,5 +1,5 @@
 class CountMessage
-  include Emque::Messages::Base
+  include Emque::Producing::Message
 
   topic "metrics"
   message_type "metrics.count"
