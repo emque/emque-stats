@@ -33,8 +33,8 @@ module Emque
         Emque::Stats.client.produce_count(event_name, count=1)
       end
 
-      def timing(event_name, timing)
-        Emque::Stats.client.produce_timing(event_name, timing)
+      def timer(event_name, duration)
+        Emque::Stats.client.produce_timer(event_name, duration)
       end
 
       def gauge(event_name, value)

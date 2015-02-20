@@ -1,7 +1,7 @@
 require "emque-producing"
 require "emque/stats/messages/count_message"
 require "emque/stats/messages/gauge_message"
-require "emque/stats/messages/timing_message"
+require "emque/stats/messages/timer_message"
 require "emque/stats/messages/event_message"
 
 module Emque
@@ -25,8 +25,8 @@ module Emque
         message.publish
       end
 
-      def produce_timing(event_name, timing)
-        message = TimingMessage.new(:event_name => event_name, :count => count)
+      def produce_timer(event_name, duration)
+        message = TimerMessage.new(:event_name => event_name, :duration => duration)
         message.publish
       end
 
