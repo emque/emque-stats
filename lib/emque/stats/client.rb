@@ -11,7 +11,7 @@ module Emque
         Emque::Producing.configure do |c|
           c.app_name = config.app_name
           c.publishing_adapter = :rabbitmq
-          c.rabbitmq_options = { :url => Rails.application.secrets.message_queue["rabbitmq_url"] }
+          c.rabbitmq_options = config.rabbitmq_options
         end
       end
 
