@@ -1,4 +1,4 @@
-require "emque-producing"
+require "emque/producing"
 require "emque/stats/messages/count_message"
 require "emque/stats/messages/gauge_message"
 require "emque/stats/messages/timing_message"
