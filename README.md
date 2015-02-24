@@ -55,8 +55,6 @@ Send some stats
 
 ## Tests
 
-Testing is a bit sparse at the moment, but we're working on it.
-
 To run tests...
 
 ```

@@ -31,7 +31,7 @@ module Emque
       end
 
       def produce_gauge(event_name, value)
-        message = GaugeMessage.new(:event_name => event_name, :count => count)
+        message = GaugeMessage.new(:event_name => event_name, :value => value)
         message.publish
       end
     end
