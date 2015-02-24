@@ -1,10 +1,15 @@
 # emque-stats
 
-A Ruby library to support a centralized data pipeline, producing operational
-and user activity stats via Emque/RabbitMQ. Separate consumer services can be
-developed to further process or directly report on the data for alerts and
-charts, either to internal tools like statsd, graphite and Riemann, or services
-like New Relic Insights and Librato Metrics.
+A library that provides any [Emque::Producing](https://github.com/teamsnap/emque-producing)
+application instrumentation capabilities for collecting application statistics
+and events. Stats and events are sent as just another Emque message through the
+Message Broker (RabbitMQ).
+
+A separate [Emque::Consuming](https://github.com/teamsnap/emque-consuming)
+service must be created and deployed to process the data. In doing so, you can
+use your preferred graphing or analytics solution, be it Graphite, StatsD,
+New Relic, Keen.io, etc.
+
 
 ## Installation
 
@@ -18,7 +23,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install emque-stats 
+    $ gem install emque-stats
 
 ## Usage
 
@@ -26,7 +31,8 @@ Initialize emque-stats.
 
 ``` ruby
   Emque::Stats.configure do |config|
-    app_name = "your_app"
+    config.app_name = "your_app"
+    config.rabbitmq_options = { :url => "your rabbitmq url" }
   end
 ```
 
@@ -34,18 +40,36 @@ Send some stats
 
 ``` ruby
   # track activity
-  Emque::Stats.event("login", :user_id => 1, :another_property => "something")
+  Emque::Stats.event("login", {:user_id => 1, :another_property => "something"} )
 
   # counter
   Emque::Stats.increment("garets")
+  Emque::Stats.count("garets", 20)
 
   # timing
-  Emque::Stats.timing("glork", 320)
+  Emque::Stats.timer("glork", 320)
 
   # gauge
   Emque::Stats.gauge("bork", 100)
 ```
 
-## Credits
+## Tests
 
-## License
+Testing is a bit sparse at the moment, but we're working on it.
+
+To run tests...
+
+```
+bundle exec rspec
+```
+
+## Contributing
+
+FIRST: Read our style guides at
+https://github.com/teamsnap/guides/tree/master/ruby
+
+1. Fork it ( http://github.com/teamsnap/emque-consuming/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
