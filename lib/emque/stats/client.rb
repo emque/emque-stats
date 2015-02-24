@@ -15,8 +15,8 @@ module Emque
         end
       end
 
-      def produce_event(event_name, props = {})
-        message = EventMessage.new(:event_name => event_name)
+      def produce_event(event_name, properties = {})
+        message = EventMessage.new(:event_name => event_name, :properties => properties)
         message.publish
       end
 

@@ -5,5 +5,5 @@ class EventMessage
   message_type "metrics.event"
 
   attribute :event_name, String, :required => true
-  #arbitrary properties
+  attribute :properties, Hash
 end

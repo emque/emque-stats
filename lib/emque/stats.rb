@@ -22,7 +22,7 @@ module Emque
       end
 
       def event(event_name, props = {})
-        Emque::Stats.client.produce_track(event_name, props)
+        Emque::Stats.client.produce_event(event_name, props)
       end
 
       def increment(event_name)
