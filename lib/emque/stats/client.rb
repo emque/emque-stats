@@ -7,12 +7,9 @@ require "emque/stats/messages/event_message"
 module Emque
   module Stats
     class Client
+
       def initialize(config)
-        Emque::Producing.configure do |c|
-          c.app_name = config.app_name
-          c.publishing_adapter = :rabbitmq
-          c.rabbitmq_options = config.rabbitmq_options
-        end
+        Emque::Producing.configuration = config.emque_producing_configuration
       end
 
       def produce_event(event_name, properties = {})
@@ -31,7 +28,7 @@ module Emque
       end
 
       def produce_gauge(event_name, value)
-        message = GaugeMessage.new(:event_name => event_name, :count => count)
+        message = GaugeMessage.new(:event_name => event_name, :value => value)
         message.publish
       end
     end

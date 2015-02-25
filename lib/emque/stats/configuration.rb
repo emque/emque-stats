@@ -1,13 +1,10 @@
 module Emque
   module Stats
     class Configuration
-      attr_accessor :app_name
-      attr_accessor :logger
-      attr_accessor :rabbitmq_options
+      attr_accessor :emque_producing_configuration
 
       def initialize
-        @app_name = ""
-        @rabbitmq_options = {}
+        @emque_producing_configuration = nil
       end
     end
   end
