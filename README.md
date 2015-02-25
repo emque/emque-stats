@@ -1,5 +1,8 @@
 # emque-stats
 
+[ ![Codeship Status for
+teamsnap/emque-stats](https://www.codeship.io/projects/e9d694d0-9eb3-0132-75d9-56e0c71a690d/status)](https://www.codeship.io/projects/64928)
+
 A library that provides any [Emque::Producing](https://github.com/teamsnap/emque-producing)
 application instrumentation capabilities for collecting application statistics
 and events. Stats and events are sent as just another Emque message through the
