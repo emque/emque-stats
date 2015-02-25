@@ -1,7 +1,12 @@
 require "spec_helper"
 
 describe Emque::Stats::Client do
-  subject { Emque::Stats::Client.new(Emque::Stats::Configuration.new) }
+  let(:config) {
+    config = Emque::Stats::Configuration.new
+    config.publish_messages = false
+    config
+  }
+  subject { Emque::Stats::Client.new(config) }
 
   it "produces event" do
     subject.produce_event("signin")

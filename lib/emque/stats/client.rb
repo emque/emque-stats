@@ -12,6 +12,7 @@ module Emque
           c.app_name = config.app_name
           c.publishing_adapter = :rabbitmq
           c.rabbitmq_options = config.rabbitmq_options
+          c.publish_messages = config.publish_messages
         end
       end
 
