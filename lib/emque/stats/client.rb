@@ -7,17 +7,9 @@ require "emque/stats/messages/event_message"
 module Emque
   module Stats
     class Client
-      def initialize(config)
-        Emque::Producing.configure do |c|
-          c.app_name = config.app_name
-          c.publishing_adapter = :rabbitmq
-          c.rabbitmq_options = config.rabbitmq_options
-          c.publish_messages = config.publish_messages
-        end
-      end
 
-      def publish_messages=(publish_messages)
-        Emque::Producing.configuration.publish_messages = publish_messages
+      def initialize(config)
+        Emque::Producing.configuration = config.emque_producing_configuration
       end
 
       def produce_event(event_name, properties = {})

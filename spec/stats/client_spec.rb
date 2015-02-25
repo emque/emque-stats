@@ -1,9 +1,10 @@
-require "spec_helper"
-
 describe Emque::Stats::Client do
   subject {
-    client = Emque::Stats::Client.new(Emque::Stats::Configuration.new)
-    client.publish_messages = false
+    producing_configuration = Emque::Producing::Configuration.new
+    producing_configuration.publish_messages = false
+    stats_configuration = Emque::Stats::Configuration.new
+    stats_configuration.emque_producing_configuration = producing_configuration
+    client = Emque::Stats::Client.new(stats_configuration)
     client
   }
 

@@ -13,7 +13,6 @@ service must be created and deployed to process the data. In doing so, you can
 use your preferred graphing or analytics solution, be it Graphite, StatsD,
 New Relic, Keen.io, etc.
 
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -30,12 +29,17 @@ Or install it yourself as:
 
 ## Usage
 
-Initialize emque-stats.
+For any app already using Emque::Producing, there is nothing further to do.
+Emque::Stats will re-use the same configuration.
+
+For an app that is not already using Emque::Producing.
 
 ``` ruby
   Emque::Stats.configure do |config|
-    config.app_name = "your_app"
-    config.rabbitmq_options = { :url => "your rabbitmq url" }
+    emque_configuration = Emque::Producing::Configuration.new
+    emque_configuration.app_name = "your_app"
+    emque_configuration.rabbitmq_options = { :url => "your rabbitmq url" }
+    config.emque_producing_configuration = emque_configuration
   end
 ```
 
