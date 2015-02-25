@@ -16,6 +16,10 @@ module Emque
         end
       end
 
+      def publish_messages=(publish_messages)
+        Emque::Producing.configuration.publish_messages = publish_messages
+      end
+
       def produce_event(event_name, properties = {})
         message = EventMessage.new(:event_name => event_name, :properties => properties)
         message.publish
