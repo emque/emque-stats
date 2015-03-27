@@ -18,13 +18,12 @@ Gem::Specification.new do |spec|
   spec.files += Dir.glob('lib/**/*.rb')
   spec.files += Dir.glob('spec/**/*')
   spec.test_files = Dir.glob('spec/**/*')
-  spec.required_ruby_version = "~> 2.1.2"
 
-  spec.add_dependency "emque-producing", "1.0.0.beta2"
+  spec.add_dependency "emque-producing", "1.0.0.beta3"
 
   spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake",    "~> 10.4"
-  spec.add_development_dependency "rspec",   "~> 3.2"
-  spec.add_development_dependency "bunny",   "~> 1.7"
+  spec.add_development_dependency "rake",    "~> 10.4.2"
+  spec.add_development_dependency "rspec",   "~> 3.2.0"
+  spec.add_development_dependency "bunny",   "~> 1.7.0"
   spec.add_development_dependency "pry"
 end

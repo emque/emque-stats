@@ -3,6 +3,7 @@ class CountMessage
 
   topic "metrics"
   message_type "metrics.count"
+  raise_on_failure false
 
   attribute :event_name, String, :required => true
   attribute :count, Integer, :required => true

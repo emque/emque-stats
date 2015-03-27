@@ -3,6 +3,7 @@ class TimerMessage
 
   topic "metrics"
   message_type "metrics.timer"
+  raise_on_failure false
 
   attribute :event_name, String, :required => true
   attribute :duration, Integer, :required => true
