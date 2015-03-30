@@ -14,4 +14,22 @@ describe Emque::Stats do
       ).to eq "emque_stats"
     end
   end
+
+  describe "#count" do
+    subject {
+      Emque::Stats.configure do |config|
+      end
+      Emque::Stats.client
+    }
+
+    it "by default, produces a count of 1" do
+      expect(subject).to receive(:produce_count).with("an.event", 1)
+      Emque::Stats.count("an.event")
+    end
+
+    it "produces an arbitrary count" do
+      expect(subject).to receive(:produce_count).with("an.event", 5)
+      Emque::Stats.count("an.event", 5)
+    end
+  end
 end

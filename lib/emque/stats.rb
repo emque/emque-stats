@@ -30,7 +30,7 @@ module Emque
       end
 
       def count(event_name, count=1)
-        Emque::Stats.client.produce_count(event_name, count=1)
+        Emque::Stats.client.produce_count(event_name, count)
       end
 
       def timer(event_name, duration)
