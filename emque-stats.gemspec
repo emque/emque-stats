@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.files += Dir.glob('spec/**/*')
   spec.test_files = Dir.glob('spec/**/*')
 
-  spec.add_dependency "emque-producing", "1.0.0.beta5"
+  spec.add_dependency "emque-producing", ">= 1.0.0.beta5"
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake",    "~> 10.4.2"
