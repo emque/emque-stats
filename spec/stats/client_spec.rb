@@ -9,7 +9,7 @@ describe Emque::Stats::Client do
   }
 
   it "produces event" do
-    subject.produce_event("signin")
+    subject.produce_track_event("signin")
   end
 
   it "produces count" do

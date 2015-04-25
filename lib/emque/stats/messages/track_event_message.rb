@@ -1,8 +1,8 @@
-class EventMessage
+class TrackEventMessage
   include Emque::Producing::Message
 
-  topic "metrics"
-  message_type "metrics.event"
+  topic "track"
+  message_type "track.event"
   raise_on_failure false
 
   attribute :event_name, String, :required => true

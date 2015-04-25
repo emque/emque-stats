@@ -47,7 +47,7 @@ Send some stats
 
 ``` ruby
   # track activity
-  Emque::Stats.event("login", {:user_id => 1, :another_property => "something"} )
+  Emque::Stats.track("login", {:user_id => 1, :another_property => "something"} )
 
   # counter
   Emque::Stats.increment("garets")
