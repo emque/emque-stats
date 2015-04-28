@@ -2,7 +2,7 @@ require "emque-producing"
 require "emque/stats/messages/count_message"
 require "emque/stats/messages/gauge_message"
 require "emque/stats/messages/timer_message"
-require "emque/stats/messages/event_message"
+require "emque/stats/messages/track_event_message"
 
 module Emque
   module Stats
@@ -12,8 +12,8 @@ module Emque
         Emque::Producing.configuration = config.emque_producing_configuration
       end
 
-      def produce_event(event_name, properties = {})
-        message = EventMessage.new(:event_name => event_name, :properties => properties)
+      def produce_track_event(event_name, properties = {})
+        message = TrackEventMessage.new(:event_name => event_name, :properties => properties)
         message.publish
       end
 

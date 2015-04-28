@@ -21,8 +21,8 @@ module Emque
         @configuration ||= Configuration.new
       end
 
-      def event(event_name, props = {})
-        Emque::Stats.client.produce_event(event_name, props)
+      def track(event_name, props = {})
+        Emque::Stats.client.produce_track_event(event_name, props)
       end
 
       def increment(event_name)
