@@ -1,14 +1,13 @@
-# emque-stats
+[![Build Status](https://travis-ci.org/emque/emque-stats.png)](https://travis-ci.org/emque/emque-stats)
 
-[ ![Codeship Status for
-teamsnap/emque-stats](https://www.codeship.io/projects/e9d694d0-9eb3-0132-75d9-56e0c71a690d/status)](https://www.codeship.io/projects/64928)
+# Emque Stats
 
-A library that provides any [Emque::Producing](https://github.com/teamsnap/emque-producing)
+A library that provides any [Emque::Producing](https://github.com/emque/emque-producing)
 application instrumentation capabilities for collecting application statistics
 and events. Stats and events are sent as just another Emque message through the
 Message Broker (RabbitMQ).
 
-A separate [Emque::Consuming](https://github.com/teamsnap/emque-consuming)
+A separate [Emque::Consuming](https://github.com/emque/emque-consuming)
 service must be created and deployed to process the data. In doing so, you can
 use your preferred graphing or analytics solution, be it Graphite, StatsD,
 New Relic, Keen.io, etc.
@@ -73,7 +72,7 @@ bundle exec rspec
 FIRST: Read our style guides at
 https://github.com/teamsnap/guides/tree/master/ruby
 
-1. Fork it ( http://github.com/teamsnap/emque-consuming/fork )
+1. Fork it ( http://github.com/emque/emque-stats/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
