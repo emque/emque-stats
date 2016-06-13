@@ -5,5 +5,7 @@ class MeterMessage
   message_type "metrics.meter"
   raise_on_failure false
 
-  attribute :event_name, String, :required => true
+  values do
+    attribute :event_name, String, :required => true
+  end
 end
