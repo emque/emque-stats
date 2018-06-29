@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Collect and send application stats and events via Emque}
   spec.homepage      = "https://github.com/teamsnap/emque-stats"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 2.1"
+  spec.required_ruby_version = ">= 2.3"
 
   spec.require_paths = %w(lib)
   spec.files = %w(LICENSE.txt README.md Rakefile emque-stats.gemspec)
@@ -20,12 +20,12 @@ Gem::Specification.new do |spec|
   spec.files += Dir.glob('spec/**/*')
   spec.test_files = Dir.glob('spec/**/*')
 
-  spec.add_dependency "emque-producing",  "~> 1.2"
+  spec.add_dependency "emque-producing",  "~> 1.3.0"
 
   spec.add_development_dependency "bundler", ">= 1.3.0", "< 2.0"
   spec.add_development_dependency "rake",    "~> 10.4.2"
   spec.add_development_dependency "rspec",   "~> 3.2.0"
-  spec.add_development_dependency "bunny",   "~> 2.5"
+  spec.add_development_dependency "bunny",   "~> 2.11.0"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "coveralls"
 end
