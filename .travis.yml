@@ -8,3 +8,4 @@ script: bundle exec rake
 notifications:
   recipients:
     - shane@teamsnap.com
+    - ryan.williams@teamsnap.com
