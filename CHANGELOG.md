@@ -1,5 +1,6 @@
 # Emque Stats CHANGELOG
 
+- [Update Rake to fix CVE-2020-8130](https://github.com/emque/emque-stats/pull/19) (1.1.1)
 - [Upgrade to emque-producing 1.2.0 and Ruby 2.1](https://github.com/emque/emque-stats/pull/17) (1.1.0)
 - [Upgrade to emque-producing 1.1.4](https://github.com/emque/emque-stats/pull/15) (1.0.3)
 - [Upgrade to emque-producing 1.1.3](https://github.com/emque/emque-stats/pull/14) (1.0.2)
